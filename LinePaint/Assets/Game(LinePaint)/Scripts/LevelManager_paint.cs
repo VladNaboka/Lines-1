@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using YG;
@@ -38,6 +39,7 @@ namespace LinePaint
         private void Start()
         {
             OnGetData();
+            //StartCoroutine(timeButton());
 
             AppManager.Instance.ShowAd();
         }
@@ -50,8 +52,7 @@ namespace LinePaint
             uIManager.TotalDiamonds.text = "" + GameManager_paint.totalDiamonds;
             uIManager.LevelText.text = "Level " + (GameManager_paint.currentLevel + 1);
             GameManager_paint.gameStatus = GameStatus.Playing;
-            swipeControl = new SwipeControl_paint();
-            swipeControl.SetLevelManager(this);
+            StartCoroutine(timeButton());
 
             grid = new Grid();
             grid.Initialize(leveldataArray[GameManager_paint.currentLevel].width,
@@ -60,7 +61,7 @@ namespace LinePaint
                 leveldataArray[GameManager_paint.currentLevel].height];
 
             CreateGrid(Vector3.zero);
-
+            
             currentBrush = Instantiate(brushPefab, Vector3.zero, Quaternion.identity);
             currentBrush.currentCoords = leveldataArray[GameManager_paint.currentLevel].brushStartCoords;
             Vector3 brushStartPos = grid.GetCellWorldPosition(leveldataArray[GameManager_paint.currentLevel].brushStartCoords.x,
@@ -70,6 +71,8 @@ namespace LinePaint
             gameCamera.ZoomPerspectiveCamera(leveldataArray[GameManager_paint.currentLevel].width,
                 leveldataArray[GameManager_paint.currentLevel].height);
             CompleteBoard();
+
+
         }
 
         private void Update()
@@ -79,7 +82,12 @@ namespace LinePaint
                 swipeControl.OnUpdate();
             }
         }
-
+        IEnumerator timeButton()
+        {
+            yield return new WaitForSeconds(0.7f);
+            swipeControl = new SwipeControl_paint();
+            swipeControl.SetLevelManager(this);
+        }
         private Cell CreateCells(int x, int y, Vector3 originPos)
         {
             Cell cell = Instantiate(cellPrefab);

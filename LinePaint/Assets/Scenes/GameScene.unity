@@ -392,8 +392,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 350, y: -10}
-  m_SizeDelta: {x: 300, y: 160}
+  m_AnchoredPosition: {x: 376.76898, y: -10}
+  m_SizeDelta: {x: 353.537, y: 160}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &129813342
 MonoBehaviour:
@@ -428,7 +428,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Level 1
+  m_Text: 'Level '
 --- !u!222 &129813343
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -452,9 +452,9 @@ MonoBehaviour:
   textUIComponent: {fileID: 129813342}
   textMeshComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
-  text: 
-  ru: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C 1"
-  en: 'Level 1 '
+  text: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C "
+  ru: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C "
+  en: 'Level '
   tr: 
   az: 
   be: 
@@ -474,7 +474,7 @@ MonoBehaviour:
   uz: 
   uniqueFont: {fileID: 0}
   textHeight: 20
-  processTranslateLabel: 
+  processTranslateLabel: 0/2 completed
   componentTextField: 1
   countLang: 0
 --- !u!1 &170076733
@@ -770,7 +770,7 @@ MonoBehaviour:
   uz: 
   uniqueFont: {fileID: 0}
   textHeight: 20
-  processTranslateLabel: 0/2 error
+  processTranslateLabel: 0/2 completed
   componentTextField: 1
   countLang: 0
 --- !u!1 &534669902
@@ -2908,7 +2908,7 @@ MonoBehaviour:
   uz: 
   uniqueFont: {fileID: 0}
   textHeight: 20
-  processTranslateLabel: 0/19 error
+  processTranslateLabel: 0/2 completed
   componentTextField: 1
   countLang: 0
 --- !u!1 &1772642910

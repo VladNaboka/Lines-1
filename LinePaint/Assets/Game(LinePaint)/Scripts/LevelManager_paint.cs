@@ -50,7 +50,7 @@ namespace LinePaint
             GameManager_paint.totalDiamonds = YandexGame.savesData.TotalDiamonds;
 
             uIManager.TotalDiamonds.text = "" + GameManager_paint.totalDiamonds;
-            uIManager.LevelText.text = "Level " + (GameManager_paint.currentLevel + 1);
+            uIManager.LevelText.text += (GameManager_paint.currentLevel + 1);
             GameManager_paint.gameStatus = GameStatus.Playing;
             StartCoroutine(timeButton());
 
